@@ -22,4 +22,4 @@ printSomething mult
   i.times{ puts rand(101) }
 
   stringToFloat = stringToFloat.to_f
-  puts stringToFloat
+  print stringToFloat
