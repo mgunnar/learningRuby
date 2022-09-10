@@ -1,8 +1,32 @@
 #SimpleCalculator
+#TODO fix the keepCalculatorAlive method
 def line(lineSize,char)
     lineSize.times{ print char} 
     puts ""
 end
+
+def keepCalculatorAlive()
+    puts "Do you want to do a new operation? Insert 'y' for YES and 'n' for NO:"
+    response = gets.chomp();
+    
+    iterator = 0
+            while (iterator<1)
+    
+                case response
+                when "y"
+                    calculator()
+                when "n"
+                    iterator = 1
+                    break puts "Goodbye."
+                else
+                    break puts "Insert y or n. "
+
+                
+            end
+        
+    end
+    
+    end
 
 def insertTwoNumbers()
     numbersToSum = Array.new ;
@@ -36,6 +60,7 @@ def sumTwoGivenNumbers ()
 
     puts ("#{firstNumber} + #{secondNumber} equals to: #{result}") 
     puts "End of operation."
+    keepCalculatorAlive()
 end 
 
 def subsTwoGivenNumbers()
@@ -54,6 +79,7 @@ def subsTwoGivenNumbers()
 
     puts ("#{firstNumber} - #{secondNumber} equals to: #{result}") 
     puts "End of operation."
+    keepCalculatorAlive()
 end 
 
 def multiplyTwoGivenNumbers()
@@ -72,6 +98,7 @@ def multiplyTwoGivenNumbers()
 
     puts ("#{firstNumber} x #{secondNumber} equals to: #{result}") 
     puts "End of operation."
+    keepCalculatorAlive()
 end 
 
 def divideTwoGivenNumbers()
@@ -90,9 +117,11 @@ def divideTwoGivenNumbers()
 
     puts ("#{firstNumber} / #{secondNumber} equals to: #{result}") 
     puts "End of operation."
+    keepCalculatorAlive()
 
 end 
 
+def calculator()
 line(80,'=')
 puts ("Simple calculator 1.0 - 10th September 2022")
 line(80,'=')
@@ -105,15 +134,23 @@ puts ("2 - substraction")
 puts ("3 - multiplication")  
 puts ("4 - division")
 
-# sumTwoGivenNumbers()
-# subsTwoGivenNumbers()
-multiplyTwoGivenNumbers()
-divideTwoGivenNumbers()
+operation = gets.chomp();
 
+case operation 
+    when "1"
+    sumTwoGivenNumbers()
+    when "2"
+    subsTwoGivenNumbers()
+    when "3"
+    multiplyTwoGivenNumbers()
+    when "4"
+    divideTwoGivenNumbers()
+    else
+        puts "#{operation} is not an valid option. Choose a number between 1-4."
 
+end
 
+end
 
+calculator()
 
-# def divideTwoGivenNumbers (firstNumber,secondNumber)
-#     return firstNumber - secondNumber
-# end
