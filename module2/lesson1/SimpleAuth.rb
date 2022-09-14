@@ -3,8 +3,6 @@ def line(lineSize,char)
     puts ""
 end
 
-
-
 line(60,'=')
 puts "Welcome to the authenticator."
 line(60,'=')
@@ -12,20 +10,22 @@ line(60,'=')
 puts "This programa will take input from the user and compare password"
 puts "If password is correct you will get back the user object"
 
-users =    [{username:"user1" ,password: "pass1"},
-            {username:"user2" ,password: "pass2"},
-            {username:"user3" , password: "pass3"}]
+users = [
+    { username: "mashrur", password: "password1" },
+    { username: "jack", password: "password2" },
+    { username: "arya", password: "password3" },
+    { username: "jonshow", password: "password4" },
+    { username: "heisenberg", password: "password5" }
+  ]
 
 def authenticateUser(username,password,userList)
     
     userList.each do |userRecord|
         if userRecord[:username] == username && userRecord[:password] == password
             return userRecord
-            break
-        else
-            return "Invalid credentials."
         end
     end
+    "Invalid credentials."
 end
 
 attempt = 1
@@ -41,9 +41,7 @@ attempt = 1
         break if input == "n"
         attempt+=1
     end
-
-
-
+puts "You have exceeded the number of attempts" if attempt==4
 
 
 
