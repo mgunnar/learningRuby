@@ -11,7 +11,7 @@ puts "This programa will take input from the user and compare password"
 puts "If password is correct you will get back the user object"
 
 users = [
-    { username: "mashrur", password: "password1" },
+    { username: "matheus", password: "password1" },
     { username: "jack", password: "password2" },
     { username: "arya", password: "password3" },
     { username: "jonshow", password: "password4" },
