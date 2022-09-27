@@ -3,7 +3,7 @@ def do_fibon()
     puts "Enter the number that will be the limit for the fibonacci sequence."
     input = gets()
 
-    sequence = [1]
+    sequence = [1,1]
     index = 1
 
     loop do
@@ -13,8 +13,6 @@ def do_fibon()
             sequence[index+1] = sequence[index].to_i + sequence[index-1].to_i
             index +=1
     end
-    sequence.shift(2)
-    sequence.pop
     puts "The fibonacci sequence until the input number is: #{sequence}."
 end
 
