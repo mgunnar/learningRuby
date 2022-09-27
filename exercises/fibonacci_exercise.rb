@@ -13,6 +13,8 @@ def do_fibon()
             sequence[index+1] = sequence[index].to_i + sequence[index-1].to_i
             index +=1
     end
+    
+    sequence.pop
     puts "The fibonacci sequence until the input number is: #{sequence}."
 end
 
