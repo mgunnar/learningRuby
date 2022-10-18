@@ -1,0 +1,2 @@
+module SalveHelper
+end
